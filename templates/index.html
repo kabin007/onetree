@@ -1,0 +1,263 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Link for bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!--Link for static css file-->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+
+    <style>
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .cat {
+            border: 3px solid rgb(218, 218, 218);
+            display: inline;
+            height: 170px;
+            width: 170px;
+            margin: 10px;
+            border-radius: 20px;
+            background-color: rgb(240, 231, 231);
+        }
+
+        .items {
+            justify-content: center;
+            margin: auto;
+            align-items: center;
+            display: flex;
+        }
+
+        .contents {
+            margin: 100px;
+        }
+
+        .circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: rgb(201, 236, 247);
+            position: relative;
+            margin: 10px 10px 10px 35px;
+        }
+
+        .circle img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90px;
+            height: auto;
+        }
+
+        .foods {
+            display:inline-block;
+            margin: 10px;
+            height: 100%;
+            width: 250px;
+            border-radius: 25px;
+            background-color: rgb(234, 236, 236);
+            position: relative;
+            border: 3px solid rgb(170, 172, 170);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dishes {
+            margin-left: 150px;
+            height: 100%;
+            position: relative;
+            
+
+        }
+
+        .foods img {
+            width: 150px;
+            height: auto;
+        }
+
+        .text {
+            height: 50px;
+        }
+
+        .image{
+            
+        }
+
+        .non_image{
+            display: inline-block;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!--Navbar code starts from here importing navbar.html with django template-->
+    {% include 'navbar.html' %}
+
+    <!--main section code starts from here-->
+    <div id="main">
+        <div class="right_content">
+            <h2>Quick, Fresh, Delicious.<br> Your Favorites in Minutes</h1>
+                <p> Why wait for a great meal?<br> Enjoy delicious food without the hassle, perfect for any occasion.
+                </p>
+                <a href="{% url 'menu' %}"><button class="button" style="background-color:#39DB4A;">Order
+                        Now</button></a>
+        </div>
+
+        <div class="left_content">
+            <img src="{% static 'images/waiter.png' %}" alt="" style="width: 400px; height: 400px; border-radius: 50%;">
+        </div>
+
+    </div>
+    <!--main section code ends here-->
+
+    <!--popular categories code section starts from here-->
+    <div class="contents">
+        <p style="color: red; margin-left: 490px;">CUSTOMER FAVOURITES</p>
+        <h2 style="margin-left: 450px;">Popular Categories</h2>
+        <div class="items">
+            <div class="cat">
+                <div class="circle">
+                    <img src="{%static 'images/maincourse.png' %}" alt="">
+                </div>
+                <h6 style="margin-left:30px;">Main Course</h6>
+                <p style="margin-left: 30px;">(50 Dishes)</p>
+            </div>
+
+            <div class="cat">
+                <div class="circle">
+                    <img src="{%static 'images/appetizers.png' %}" alt="">
+                </div>
+                <h6 style="margin-left:30px;">Appetizers</h6>
+                <p style="margin-left: 30px;">(20 Dishes)</p>
+            </div>
+
+            <div class="cat">
+                <div class="circle">
+                    <img src="{%static 'images/starter.png' %}" alt="">
+                </div>
+                <h6 style="margin-left:30px;">Starter</h6>
+                <p style="margin-left: 30px;">(30 Dishes)</p>
+            </div>
+
+            <div class="cat">
+                <div class="circle">
+                    <img src="{%static 'images/drinks.png' %}" alt="">
+                </div>
+                <h6 style="margin-left:30px;">Drinks</h6>
+                <p style="margin-left: 30px;">(50 Dishes)</p>
+            </div>
+        </div>
+    </div>
+    <!--popular categories code section ends here-->
+
+    <!--Popular dishes category section code starts from here-->
+    <div class="dishes_container" >
+        <div class="next_icon" style="margin-left: 1050px; border: 3px solid blue; display:inline-block;">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#75FB4C"><path d="m309.67-81.33-61-61.67L587-481.33 248.67-819.67l61-61.66 400 400-400 400Z"/></svg>
+        </div>
+
+       
+        <p style="color: red;">SPECIAL DISHES</p>
+        <h2>Standout Dishes From<br> our Menu</h2>
+
+        <div class="dishes">
+
+            <div class="foods">
+                <div class="image">
+                    <img src="{%static 'images/maincourse.png' %}" alt="">
+                </div>
+                <div class="non_image">
+
+                    <h6 style="margin-left:60px;">Pork Sekwas</h6>
+                    <p style="width: 100%;">Pork Sekwa is the tastiest locally made dish</p>
+                    <div class="price_ratings" style="display: flex;"><p style="margin-left: 0px;">Rs.500</p>  <p style="margin-left: 100px;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>4.5</p></div>
+                    
+    
+                    <button class="btn btn-success" style="margin-left: 60px;margin-bottom: 10px;">Order Now</button>
+                </div>
+            </div>
+
+            <div class="foods">
+                <div class="image">
+                    <img src="{%static 'images/maincourse.png' %}" alt="">
+                </div>
+                <div class="non_image">
+
+                    <h6 style="margin-left:60px;">Pork Sekwas</h6>
+                    <p style="width: 100%;">Pork Sekwa is the tastiest locally made dish</p>
+                    <div class="price_ratings" style="display: flex;"><p style="margin-left: 0px;">Rs.500</p>  <p style="margin-left: 100px;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>4.5</p></div>
+                    
+    
+                    <button class="btn btn-success" style="margin-left: 60px;margin-bottom: 10px;">Order Now</button>
+                </div>
+            </div>
+
+            <div class="foods">
+                <div class="image">
+                    <img src="{%static 'images/maincourse.png' %}" alt="">
+                </div>
+                <div class="non_image">
+
+                    <h6 style="margin-left:60px;">Pork Sekwas</h6>
+                    <p style="width: 100%;">Pork Sekwa is the tastiest locally made dish</p>
+                    <div class="price_ratings" style="display: flex;"><p style="margin-left: 0px;">Rs.500</p>  <p style="margin-left: 100px;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>4.5</p></div>
+                    
+    
+                    <button class="btn btn-success" style="margin-left: 60px;margin-bottom: 10px;">Order Now</button>
+                </div>
+            </div>
+
+            <div class="foods">
+                <div class="image">
+                    <img src="{%static 'images/maincourse.png' %}" alt="">
+                </div>
+                <div class="non_image">
+
+                    <h6 style="margin-left:60px;">Pork Sekwas</h6>
+                    <p style="width: 100%;">Pork Sekwa is the tastiest locally made dish</p>
+                    <div class="price_ratings" style="display: flex;"><p style="margin-left: 0px;">Rs.500</p>  <p style="margin-left: 100px;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>4.5</p></div>
+                    
+    
+                    <button class="btn btn-success" style="margin-left: 60px; margin-bottom: 10px;">Order Now</button>
+                </div>
+            </div>
+
+
+
+
+            </div>
+
+    
+        </div>
+    </div>
+
+
+    <!--Link for bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
