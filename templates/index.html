@@ -19,93 +19,7 @@
 
 
     <style>
-        #main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-        }
 
-        .cat {
-            border: 3px solid rgb(218, 218, 218);
-            display: inline;
-            height: 170px;
-            width: 170px;
-            margin: 10px;
-            border-radius: 20px;
-            background-color: rgb(240, 231, 231);
-        }
-
-        .items {
-            justify-content: center;
-            margin: auto;
-            align-items: center;
-            display: flex;
-        }
-
-        .contents {
-            margin: 100px;
-        }
-
-        .circle {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background-color: rgb(201, 236, 247);
-            position: relative;
-            margin: 10px 10px 10px 35px;
-        }
-
-        .circle img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90px;
-            height: auto;
-        }
-
-        .foods {
-            display:inline-block;
-            margin: 10px;
-            height: 100%;
-            width: 250px;
-            border-radius: 25px;
-            background-color: rgb(234, 236, 236);
-            position: relative;
-            border: 3px solid rgb(170, 172, 170);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .dishes {
-            margin-left: 150px;
-            height: 100%;
-            position: relative;
-            
-
-        }
-
-        .foods img {
-            width: 150px;
-            height: auto;
-        }
-
-        .text {
-            height: 50px;
-        }
-
-        .image{
-            
-        }
-
-        .non_image{
-            display: inline-block;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
-        }
     </style>
 
 
@@ -117,7 +31,9 @@
 
     <!--main section code starts from here-->
     <div id="main">
+
         <div class="right_content">
+            <p>Welcome {{request.user.username}}</p>
             <h2>Quick, Fresh, Delicious.<br> Your Favorites in Minutes</h1>
                 <p> Why wait for a great meal?<br> Enjoy delicious food without the hassle, perfect for any occasion.
                 </p>
@@ -173,86 +89,172 @@
     <!--popular categories code section ends here-->
 
     <!--Popular dishes category section code starts from here-->
-    <div class="dishes_container" >
-        <div class="next_icon" style="margin-left: 1050px; border: 3px solid blue; display:inline-block;">
-            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#75FB4C"><path d="m309.67-81.33-61-61.67L587-481.33 248.67-819.67l61-61.66 400 400-400 400Z"/></svg>
+
+    <div class="food_container">
+        <h1 style="color: red;">Our well Liked dishes</h1>
+        <img class="next_icon" src="{%static 'images/left_next_icon.png' %}" alt="">
+        <img class="next_icon" src="{%static 'images/right_next_icon.png' %}" alt="">
+        <div class="food">
+            <div class="circle">
+                <img src="{%static 'images/food1.jpg' %}" alt="">
+            </div>
+            <h6>Burger</h6>
+            <p>Juicy patty nestled in a soft bun, topped <br> with fresh veggies and savory sauce.</p>
+            <p>Rs.250</p>
+            <p>4.5 ratings</p>
+            <a href=""><button class="btn btn-primary">Order Now</button></a>
         </div>
 
-       
-        <p style="color: red;">SPECIAL DISHES</p>
-        <h2>Standout Dishes From<br> our Menu</h2>
-
-        <div class="dishes">
-
-            <div class="foods">
-                <div class="image">
-                    <img src="{%static 'images/maincourse.png' %}" alt="">
-                </div>
-                <div class="non_image">
-
-                    <h6 style="margin-left:60px;">Pork Sekwas</h6>
-                    <p style="width: 100%;">Pork Sekwa is the tastiest locally made dish</p>
-                    <div class="price_ratings" style="display: flex;"><p style="margin-left: 0px;">Rs.500</p>  <p style="margin-left: 100px;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>4.5</p></div>
-                    
-    
-                    <button class="btn btn-success" style="margin-left: 60px;margin-bottom: 10px;">Order Now</button>
-                </div>
+        <div class="food">
+            <div class="circle">
+                <img src="{%static 'images/food1.jpg' %}" alt="">
             </div>
-
-            <div class="foods">
-                <div class="image">
-                    <img src="{%static 'images/maincourse.png' %}" alt="">
-                </div>
-                <div class="non_image">
-
-                    <h6 style="margin-left:60px;">Pork Sekwas</h6>
-                    <p style="width: 100%;">Pork Sekwa is the tastiest locally made dish</p>
-                    <div class="price_ratings" style="display: flex;"><p style="margin-left: 0px;">Rs.500</p>  <p style="margin-left: 100px;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>4.5</p></div>
-                    
-    
-                    <button class="btn btn-success" style="margin-left: 60px;margin-bottom: 10px;">Order Now</button>
-                </div>
-            </div>
-
-            <div class="foods">
-                <div class="image">
-                    <img src="{%static 'images/maincourse.png' %}" alt="">
-                </div>
-                <div class="non_image">
-
-                    <h6 style="margin-left:60px;">Pork Sekwas</h6>
-                    <p style="width: 100%;">Pork Sekwa is the tastiest locally made dish</p>
-                    <div class="price_ratings" style="display: flex;"><p style="margin-left: 0px;">Rs.500</p>  <p style="margin-left: 100px;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>4.5</p></div>
-                    
-    
-                    <button class="btn btn-success" style="margin-left: 60px;margin-bottom: 10px;">Order Now</button>
-                </div>
-            </div>
-
-            <div class="foods">
-                <div class="image">
-                    <img src="{%static 'images/maincourse.png' %}" alt="">
-                </div>
-                <div class="non_image">
-
-                    <h6 style="margin-left:60px;">Pork Sekwas</h6>
-                    <p style="width: 100%;">Pork Sekwa is the tastiest locally made dish</p>
-                    <div class="price_ratings" style="display: flex;"><p style="margin-left: 0px;">Rs.500</p>  <p style="margin-left: 100px;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>4.5</p></div>
-                    
-    
-                    <button class="btn btn-success" style="margin-left: 60px; margin-bottom: 10px;">Order Now</button>
-                </div>
-            </div>
-
-
-
-
-            </div>
-
-    
+            <h6>Burger</h6>
+            <p>Juicy patty nestled in a soft bun, topped <br> with fresh veggies and savory sauce.</p>
+            <p>Rs.250</p>
+            <p>4.5 ratings</p>
+            <a href="{% url 'menu' %}"><button class="btn btn-primary">Order Now</button></a>
         </div>
+
+        <div class="food">
+            <div class="circle">
+                <img src="{%static 'images/food1.jpg' %}" alt="">
+            </div>
+            <h6>Burger</h6>
+            <p>Juicy patty nestled in a soft bun, topped <br>with fresh veggies and savory sauce.</p>
+            <p>Rs.250</p>
+            <p>4.5 ratings</p>
+            <a href="{%url 'menu'%}"><button class="btn btn-primary">Order Now</button></a>
+        </div>
+
+
+        <div class="food">
+            <div class="circle">
+                <img src="{%static 'images/food1.jpg' %}" alt="">
+            </div>
+            <h6>Burger</h6>
+            <p>Juicy patty nestled in a soft bun, topped <br>with fresh veggies and savory sauce.</p>
+            <p>Rs.250</p>
+            <p>4.5 ratings</p>
+            <a href="{%url 'menu' %}"><button class="btn btn-primary">Order Now</button></a>
+        </div>
+
     </div>
 
+    <!--popular dishes category ends here-->
+
+
+    <!--Testimonials category starts from here-->
+    <div class="testimonial">
+
+        <div class="testimage">
+            <img src="{% static 'images/santoshbhai.jpeg' %}" alt="">
+        </div>
+
+        <div class="texts">
+            <p style="color: red;">TESTIOMONIALS</p>
+            <h3>What Our Customers Say About Us.</h3>
+
+
+            <p>“I had the pleasure of dining at One Tree last night, and I'm still raving about the experience! The
+                attention to detail in presentation and service was impeccable”</p>
+
+            <div class="customers_profiles">
+                <img style="height: 50px; width: 50px;" src="{% static 'images/Mask_group.png' %}" alt="">
+                <img style="height: 50px; width: 50px;" src="{% static 'images/Mask_group.png' %}" alt="">
+                <img style="height: 50px; width: 50px;" src="{% static 'images/Mask_group.png' %}" alt="">
+            </div>
+
+            <p style="font-weight: bold; position: relative;left: 25%; bottom: 30px;">Customer Feedback</p>
+            <p style="position: relative; left: 25%;bottom: 30px;">ratings_logo 4.5 (18.5k reviews)</p>
+
+
+        </div>
+    </div>
+    <!--code for testimonail section ends from here-->
+
+    <!--Code for our journey starts from here-->
+    <div class="our_journey">
+
+        <div class="text" >
+            <p>Our Story & Services</p>
+            <h2>Our Culinary Journey and Serives</h2>
+            <p>Rooted in passion, we curate unforgettable dining experiences and <br> offer exceptional services,
+                blending
+                culinary artistry with warm hospitality.</p>
+
+            <button class="btn btn-success">Explore</button>
+        </div>
+        
+<!--code for services cards starts from here-->
+        <div class="mcont">
+            <div class="services_container1">
+                <div class="serv">
+                    <p>Catering</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+    
+                <div class="serv">
+                    <p>Catering</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+    
+            <div class="services_container2">
+                <div class="serv">
+                    <p>Catering</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+    
+                <div class="serv">
+                    <p>Catering</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+    
+            </div>
+
+        </div>
+
+        <!--code for services cards ends here-->
+    </div>
+       <!--code for our services ends here-->
+
+       <!--footer code starts from here-->
+       <footer>
+        <div class="footdiv" style="position: relative;bottom: 80px; left: 40px;">
+            <p style="font-weight: bold;">One Tree Restro & Bar</p>
+            <p>Savor the artistry where every dish is a culinary masterpiece</p>
+        </div>
+        <div class="footdiv" style="position: relative;  top: 40px; left: 100px;">
+            <p style="font-weight: bold;">Useful Links</p>
+            <p>About Us</p>
+            <p>Blog</p>
+            <p>Events</p>
+            <p>FAQs</p>
+        </div>
+        <div class="footdiv"style="position: relative;  top: 40px; left: 170px;">
+            <p style="font-weight: bold;">Main Menu</p>
+            <p>Home</p>
+            <p>Services</p>
+            <p>About</p>
+            <p>Offers</p>
+        </div>
+        <div class="footdiv" style="position: relative; left: 250px;">
+            <p style="font-weight: bold;">Contact Us</p>
+            <p>onetree2021@gmail.com</p>
+            <p>+9779803478874</p>
+            <p>www.facebook.com/one-tree</p>
+        </div>
+        <div class="footdiv" style="position: relative; top: 100px; right: 500px;">
+            <p>Copyright @ 2024  codebyKabin | All rights reserved</p>
+        </div>
+        <div class="footdiv" style="position: relative; right: 1170px; top: 100px;">
+            <img src="{% static 'images/facebook.png' %}" alt="" style="height: 25px; width: 25px; margin-left: 10px;">
+            <img src="{% static 'images/instagram.png' %}" alt="" style="height: 25px; width: 25px;margin-left: 10px;">
+            <img src="{% static 'images/twitter.png' %}" alt="" style="height: 25px; width: 25px;margin-left: 10px;">
+            <img src="{% static 'images/youtube.png' %}" alt="" style="height: 25px; width: 25px;margin-left: 10px;">
+        </div>
+       </footer>
 
     <!--Link for bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
